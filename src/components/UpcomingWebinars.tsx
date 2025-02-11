@@ -72,7 +72,7 @@ const UpcomingWebinars = () => {
         </div>
       </div>
       <div className="mt-10 text-center mb-5">
-        <Button content={"View All Webinars"} />
+        <Button content={"View All Webinars"} href={"webinars"}/>
       </div>
     </div>
   );

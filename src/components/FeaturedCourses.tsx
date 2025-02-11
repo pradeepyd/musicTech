@@ -1,37 +1,61 @@
 import Link from "next/link";
 import courseData from "../data/music_courses.json";
+import { BackgroundGradient } from "./ui/background-gradient";
+import Button from "./ui/Button";
 
+interface Course {
+  id: number;
+  slug: string;
+  description: string;
+  title: string;
+  price: Number;
+  instructor: string;
+  isFeatured: Boolean;
+}
 const FeaturedCourses = () => {
+  const featuredCourses = courseData.courses.filter(
+    (course) => course.isFeatured
+  );
   return (
-    <div className="py-12 bg-gray-900">
+    <div className="py-12 bg-gray-900 ">
       <div>
         <div className="text-center">
           <h2 className="text-teal-600 text-base font-semibold tracking-wide uppercase">
             FEATURES COURSES
           </h2>
           <p className="mt-2 text-3xl font-extrabold tracking-tight leading-8 text-white sm:text-4xl">
-            Learn with the best
+            Learn With The Best
           </p>
         </div>
       </div>
-      <div className="mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-            test
+      <div className="mr-10 ml-10">
+        <div className="mt-20 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            {featuredCourses.map((course: Course) => (
+              <div key={course.id} className="flex justify-center">
+                <BackgroundGradient className="flex flex-col bg-white rounded-[22px] h-full max-w-sm overflow-hidden dark:bg-zinc-900">
+                  <div className="flex flex-col items-center text-center p-4 sm:p-6 flex-grow">
+                    <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+                      {course.title}
+                    </p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">
+                      {course.description}
+                    </p>
+                    <Link
+                      href={`/courses/${course.slug}`}
+                      className="hover:underline mt-2"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </BackgroundGradient>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="mt-20 text-center">
-        <Link
-          href={"/courses"}
-          className="relative bg-blue-500 text-white px-6 py-3 rounded-md 
-            overflow-hidden transition-all duration-300 
-            hover:scale-105 hover:shadow-[0_0_6px_rgba(59,130,246,0.3)]
-            active:scale-95 focus:outline-none focus:ring-1 focus:ring-blue-300
-            before:absolute before:inset-0 before:z-[-1] before:bg-blue-500 
-            before:blur-sm before:opacity-30
-            hover:before:opacity-50 animate-subtle-glow"
-        >
-          View all Courses
-        </Link>
+      <div className="mt-20 text-center mb-5">
+        <Button content={"View All Courses"} />
       </div>
     </div>
   );
