@@ -21,20 +21,20 @@ export default function SignIn() {
     if (res?.error) {
       alert(res.error);
     } else {
-      router.push("/dashboard");
+      router.push("/courses");
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="p-6 bg-gray-800 rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">Sign In</h1>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mb-2 p-2 border rounded w-full"
+          className="mb-4 p-2 border rounded w-full"
         />
         <input
           type="password"
