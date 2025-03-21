@@ -10,7 +10,7 @@ function Navbar({ className }: { className?: string }) {
   return (
       <div
         className={cn(
-          "fixed top-5 inset-x-0 max-w-2xl mx-auto z-50",
+          "top-5 inset-x-0 max-w-2xl mx-auto z-50 bg-transparent",
           className
         )}
       >

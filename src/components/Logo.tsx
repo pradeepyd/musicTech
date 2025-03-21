@@ -8,7 +8,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <div
-      className={`inline-flex items-center gap-2 relative top-4 left-4 z-5 transform transition-transform duration-500 ${className}`}
+      className={`inline-flex items-center gap-2 relative top-2 left-2 z-5 transform transition-transform duration-500 ${className}`}
     >
       {/* Music Icon with Hover Animation */}
       <div className="relative bg-gradient-to-r from-indigo-500 to-purple-500 p-2 rounded-full group hover:scale-110 transition-transform duration-300">
