@@ -8,9 +8,9 @@ interface Course {
   slug: string;
   description: string;
   title: string;
-  price: Number;
+  price: number;
   instructor: string;
-  isFeatured: Boolean;
+  isFeatured: boolean;
 }
 const FeaturedCourses = () => {
   const featuredCourses = courseData.courses.filter(

@@ -1,12 +1,11 @@
 "use client"
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import Button from "@/components/ui/Button";
-import { Meteors } from "@/components/ui/meteors";
-import { FormEvent, useState } from "react";
+
+import { useState } from "react";
 
 export default function Home() {
-    const [email,setEmail] = useState("");
-    const [message,setMessage] = useState("");
+    const [,setEmail] = useState("");
+    const [,setMessage] = useState("");
 
     function handleMessage(){
         alert("submitted");

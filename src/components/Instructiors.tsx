@@ -1,7 +1,6 @@
 "use client"
 import { WavyBackground } from "./ui/wavy-background";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import Image from 'next/image';
 
 const instructors = [
     {
