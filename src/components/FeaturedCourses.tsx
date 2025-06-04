@@ -55,7 +55,7 @@ const FeaturedCourses = () => {
         </div>
       </div>
       <div className="mt-20 text-center mb-5">
-        <Button content={"View All Courses"} />
+        <Button content={"View All Courses"} href={"courses"} />
       </div>
     </div>
   );
